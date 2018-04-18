@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { styles } from './styles.js';
+import './App.css';
 
 
 const txt = "PS. Love CapCher <3"
@@ -12,6 +13,11 @@ const gif1 = "https://media1.tenor.com/images/234c0bd4608b981c3299adb6e2b90bc1/t
 
 const gif2 = "https://thumbs.gfycat.com/RedImpassionedGlobefish-max-1mb.gif";
 
+const headerpic = {
+    backgroundImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9blZurrvnZ9GTkwVy-fTXPFYdUcNYHQb3R4mFX3HNHR3iCxcmA",
+    height: '50%'
+};
+
 const styleColor = {
 	color: styles.color,
 	fontFamily: styles.fontFamily,
@@ -20,14 +26,18 @@ const styleColor = {
 
 class App extends Component {
 
+	componentWillMount(){
+		document.title = "Cherprang Background Changer";
+	}
+
 	constructor(props){
 	super(props);
 	this.state = { feel: love,
 					src: gif1};
-	this.update = this.update.bind(this);	
+        this.changeBackground = this.changeBackground.bind(this);
 	}
 
-	update(){
+	changeBackground(){
 		const newFeel = this.state.feel === love ? cool : love;
 		const newSrc = this.state.feel === love ? gif2 : gif1;
 		this.setState({feel: newFeel , src: newSrc});
@@ -36,18 +46,33 @@ class App extends Component {
 	render() {
 		return(
 			<div style={{background: this.state.feel , textAlign:"center"}}>
-				<h1 style={styleColor}>
-					CapCher Background Changer
-				</h1>
-				<img src={this.state.src} />
+                <header className={"App-header"}>
+                    <img src={headerpic.backgroundImage} alt="header" />
+                    <h1 style={styleColor}>
+                        CapCher Background Changer
+                    </h1>
+                </header>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+				<img src={this.state.src} alt="Cherprang.gif" />
 				<br>
 				</br>
-				<button onClick={this.update}>
+                <br>
+                </br>
+				<button onClick={this.changeBackground}>
 				Change background!
-				</button>
+				</button><br></br>
+				<input type="text" />
+
 				<h1 style={styleColor}>
 				 First time with React and this is what I made LOL <br></br>
-				{txt} 
+				{txt}
 				</h1>
 			</div>
 		)	
