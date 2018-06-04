@@ -6,6 +6,7 @@ You can find the most recent version of guide [here](https://github.com/facebook
 
 - Open cmd / Terminal 
 - Change directory to where you save your project.
+- Use command npm install
 - Type command npm start
 
 That all! :)
