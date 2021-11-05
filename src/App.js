@@ -35,31 +35,25 @@ const styleP = {
 
 class App extends Component {
 
-	/*componentWillMount(){
-		document.title = "HappyCherDay";
-	}*/
-
 	constructor(props){
-	super(props);
-	this.state = {feel: love, src: gif1, des:alt1};
-	this.changeBackground = this.changeBackground.bind(this);
+        super(props);
+        this.state = {feel: love, src: gif1, des: alt1};
+        this.changeBackground = this.changeBackground.bind(this);
 	}
 
-	changeBackground(){
+	changeBackground() {
 		const newFeel = this.state.feel === love ? cool : love;
 		const newSrc = this.state.feel === love ? gif2 : gif1;
         const newDes = this.state.feel === love ? alt2 : alt1;
 		this.setState({feel: newFeel , src: newSrc, des: newDes});
-
 	}
+
 	render() {
 		return(
 			<div style={{background: this.state.feel , textAlign:"center"}}>
                 <header className={"App-header"}>
                     <img src={headerpic.backgroundImage} alt="header" />
-                    <h1 style={styleh1}>
-                        Happy Birthday Cherprang BNK48!!
-                    </h1>
+                    <h1 style={styleh1}>Happy Birthday Cherprang BNK48!!</h1>
                 </header>
                 <br></br>
                 <br></br>
@@ -70,13 +64,12 @@ class App extends Component {
                 <br></br>
                 <br></br>
 				<img src={this.state.src} alt={this.state.des} />
-				<br>
-				</br>
-                <br>
-                </br>
+				<br></br>
+                <br></br>
 				<button onClick={this.changeBackground}>
-				Change background!
-				</button><br></br>
+				    Change background!
+				</button>
+                <br></br>
 
 
 				<h1 style={styleh1}>
